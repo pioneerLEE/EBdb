@@ -1,20 +1,20 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-const { Types: { ObjectId }} = Schema;
+const { Types: { ObjectId } } = Schema;
 const company_serviceSchema = new Schema({
-  company:{
-    type:ObjectId,
-    ref:'Company'
+  company: {
+    type: ObjectId,
+    ref: 'Company'
   },
-  service:{
-    type:ObjectId,
-    ref:'Service'
+  service: {
+    type: ObjectId,
+    ref: 'Service'
   },
-  data_created:{
+  data_created: {
     type: Date,
     default: Date(),
   },
 });
 
-module.exports = mongoose.model('Company_service', company_serviceSchema);
+module.exports = mongoose.model('Company_Service', company_serviceSchema);

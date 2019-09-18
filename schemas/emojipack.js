@@ -1,84 +1,84 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-const { Types: { ObjectId }} = Schema;
+const { Types: { ObjectId } } = Schema;
 const emojipackSchema = new Schema({
   //이모티콘 이름
-  name:{
+  name: {
     type: String,
     required: true,
   },
-  author:{
-    type:ObjectId,
-    ref:'Author'
+  author: {
+    type: ObjectId,
+    ref: 'Author'
   },
   //이모티콘 설명
-  summary:{
+  summary: {
     type: String,
   },
   //이모티콘 지원 언어 ex) global, En, Kr, JP
-  language:{
+  language: {
     type: ObjectId,
     ref: 'Language',
   },
   //해당 팩에 속한 낱개의 이모티콘들
-  emojis:[
+  emojis: [
     {
-        type:ObjectId,
-        ref:'Emoji'
+      type: ObjectId,
+      ref: 'Emoji'
     }
   ],
   //해당 이모티콘팩에 포함된 태그들
-  tags:[
+  tags: [
     {
-        type:ObjectId,
-        ref:'Tag'
+      type: ObjectId,
+      ref: 'Tag'
     }
   ],
   //해당 이모티콘팩에 대표되는 태그들
-  typicalTags:[
+  typicalTags: [
     {
-        type:ObjectId,
-        ref:'Tag'
+      type: ObjectId,
+      ref: 'Tag'
     }
   ],
   //해당 이모티콘팩의 대표 이모티콘
-  typicalEmoji:{
+  typicalEmoji: {
     type: ObjectId,
     ref: 'Emoji',
   },
   //기본 이모티콘 여부
-  isBasic:{
+  isBasic: {
     type: Boolean,
     default: false,
   },
-  isAnimated:{
+  isAnimated: {
     type: Boolean,
     default: false,
   },
-  isBrand:{
+  isBrand: {
     type: Boolean,
     default: false,
   },
-  isFree:{
+  isFree: {
     type: Boolean,
     default: false,
   },
-  sold:{
+  sold: {
     type: Number,
     default: 0,
   },
-  price:{
+  price: {
     type: Number,
   },
-  data_created:{
+  data_created: {
     type: Date,
     default: Date(),
   },
-  data_fix:{
+  data_fix: {
     type: Date,
     default: Date(),
   },
 });
 
-module.exports = mongoose.model('Emojipack', emojipackSchema);
+module.exports = mongoose.model('EmojiPack', emojipackSchema);

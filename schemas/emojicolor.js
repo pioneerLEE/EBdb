@@ -1,24 +1,24 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-const { Types: { ObjectId }} = Schema;
+const { Types: { ObjectId } } = Schema;
 const emojicolorSchema = new Schema({
-  color:{
+  color: {
     type: String,
     required: true,
   },
-  precent:{
+  precent: {
     type: String,
     required: true,
   },
-  emoji:{
-    type:ObjectId,
-    ref:'Emoji'
+  emoji: {
+    type: ObjectId,
+    ref: 'Emoji'
   },
-  data_created:{
+  data_created: {
     type: Date,
     default: Date(),
   },
 });
 
-module.exports = mongoose.model('Emojicolor', emojicolorSchema);
+module.exports = mongoose.model('EmojiColor', emojicolorSchema);
