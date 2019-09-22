@@ -10,7 +10,8 @@ const emojipackSchema = new Schema({
   },
   author: {
     type: ObjectId,
-    ref: 'Author'
+    ref: 'Author',
+    required:true,
   },
   //이모티콘 설명
   summary: {
@@ -52,6 +53,7 @@ const emojipackSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  //종류
   isAnimated: {
     type: Boolean,
     default: false,
@@ -70,6 +72,12 @@ const emojipackSchema = new Schema({
   },
   price: {
     type: Number,
+  },
+  //심사 중: "decision in process" 완료: "complete" 반려:"return"
+  status:{
+    type:String,
+    required:true,
+    default:"decision in process"
   },
   data_created: {
     type: Date,
