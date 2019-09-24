@@ -9,7 +9,7 @@ const emojipack_userSchema = new Schema({
   },
   emojipack: {
     type: ObjectId,
-    ref: 'Emojipack'
+    ref: 'EmojiPack'
   },
   data_untill: {
     type: Date,

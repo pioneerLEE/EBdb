@@ -1,23 +1,23 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-const { Types: { ObjectId }} = Schema;
+const { Types: { ObjectId } } = Schema;
 const guestSchema = new Schema({
-  service:{
-    type:ObjectId,
-    ref:'Service'
+  service: {
+    type: ObjectId,
+    ref: 'Service'
   },
-  emojipacks:[
+  emojipacks: [
     {
-        type:ObjectId,
-        ref:'Emojipack'
+      type: ObjectId,
+      ref: 'EmojiPack'
     }
   ],
-  guest_id:{
+  guest_id: {
     type: String,
     required: true,
   },
-  data_created:{
+  data_created: {
     type: Date,
     default: Date(),
   },

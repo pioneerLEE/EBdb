@@ -9,7 +9,7 @@ const tag_emojipackSchema = new Schema({
   },
   emojipack: {
     type: ObjectId,
-    ref: 'Emojipack'
+    ref: 'EmojiPack'
   },
   data_created: {
     type: Date,

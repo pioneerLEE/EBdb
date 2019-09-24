@@ -1,43 +1,39 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-const { Types: { ObjectId }} = Schema;
+const { Types: { ObjectId } } = Schema;
 const authorSchema = new Schema({
-  name:{
+  name: {
     type: String,
     required: true,
   },
-  email:{
+  email: {
     type: String,
   },
-  password:{
+  password: {
     type: String,
   },
-  emojipacks:[
+  emojipacks: [
     {
-        type:ObjectId,
-        ref:'Emojipack'
+      type: ObjectId,
+      ref: 'EmojiPack'
     }
   ],
-  //생년월일 ex)19980111
-  birth:{
-      type:Number,
-      required: true,
-  },
-  email_verified :{ 
-    type: Boolean, 
-    required:true, 
-    default: false 
-  },
-  key_for_verify :{
+  // 성별 'male' 'female' 'x'
+  gender: {
     type: String,
-    required:true
+    required: true,
   },
-  data_created:{
+  //생년월일
+  birth: {
+    type: Number,
+    required: true,
+  },
+  data_created: {
     type: Date,
     default: Date(),
   },
-  data_fix:{
+  data_fix: {
     type: Date,
     default: Date(),
   },

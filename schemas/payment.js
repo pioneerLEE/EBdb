@@ -1,25 +1,25 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-const { Types: { ObjectId }} = Schema;
+const { Types: { ObjectId } } = Schema;
 const paymentSchema = new Schema({
-  service:{
-    type:ObjectId,
-    ref:'Service'
+  service: {
+    type: ObjectId,
+    ref: 'Service'
   },
-  emojipacks:{
-    type:ObjectId,
-    ref:'Emojipack'
+  emojipacks: {
+    type: ObjectId,
+    ref: 'EmojiPack'
   },
-  user:{
-    type:ObjectId,
-    ref:'User'
+  user: {
+    type: ObjectId,
+    ref: 'User'
   },
-  money:{
+  money: {
     type: Number,
     required: true,
   },
-  data_created:{
+  data_created: {
     type: Date,
     default: Date(),
   },

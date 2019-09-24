@@ -1,49 +1,49 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-const { Types: { ObjectId }} = Schema;
+const { Types: { ObjectId } } = Schema;
 const userSchema = new Schema({
-  nick:{
+  nick: {
     type: String,
     required: true,
   },
-  provider:{
+  provider: {
     type: String,
   },
-  sns_id:{
+  sns_id: {
     type: String,
   },
-  email:{
+  email: {
     type: String,
   },
-  password:{
+  password: {
     type: String,
   },
-  emojipacks:[
+  emojipacks: [
     {
-        type:ObjectId,
-        ref:'Emojipack'
+      type: ObjectId,
+      ref: 'EmojiPack'
     }
   ],
-  services:[
+  services: [
     {
-      type:ObjectId,
-      ref:'Service'
+      type: ObjectId,
+      ref: 'Service'
     }
   ],
   // 성별 'male' 'female' 'x' 하...
-  gender:{
-    type:String
+  gender: {
+    type: String
   },
   //생년월일
-  birth:{
-      type:Number,
+  birth: {
+    type: Number,
   },
-  data_created:{
+  data_created: {
     type: Date,
     default: Date(),
   },
-  data_fix:{
+  data_fix: {
     type: Date,
     default: Date(),
   },

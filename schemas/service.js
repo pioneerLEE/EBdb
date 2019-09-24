@@ -1,41 +1,47 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-const { Types: { ObjectId }} = Schema;
+const { Types: { ObjectId } } = Schema;
 const serviceSchema = new Schema({
-  apikey:{
+  name: {
+    type: String,
+    require: true,
+    unique: true,
+  },
+  apikey: {
     type: String,
     required: true,
   },
-  consumer_age:{
+  consumer_age: {
     type: Number,
     required: true,
+    default: 0,
   },
-  company:{
-    type:ObjectId,
-    ref:'Company'
+  company: {
+    type: ObjectId,
+    ref: 'Company'
   },
-  tags:[
+  tags: [
     {
-      type:ObjectId,
-      ref:'Tags'
+      type: ObjectId,
+      ref: 'Tags'
     }
   ],
-  antitags:[
+  antitags: [
     {
-      type:ObjectId,
-      ref:'Tags'
+      type: ObjectId,
+      ref: 'Tags'
     }
   ],
-  category:{
-    type:ObjectId,
-    ref:'ServiceCategory'
+  category: {
+    type: ObjectId,
+    ref: 'ServiceCategory'
   },
-  data_created:{
+  data_created: {
     type: Date,
     default: Date(),
   },
-  data_fix:{
+  data_fix: {
     type: Date,
     default: Date(),
   },

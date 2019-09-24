@@ -7,7 +7,7 @@ const basicemojipackSchema = new Schema({
     list: [
         {
             type: ObjectId,
-            ref: 'emojipack',
+            ref: 'EmojiPack',
         }
     ]
 });

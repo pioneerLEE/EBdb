@@ -1,72 +1,68 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const { Types: { ObjectId }} = Schema;
+const { Types: { ObjectId } } = Schema;
 const emojiSchema = new Schema({
-  emojipack:{
-    type:ObjectId,
-    ref:'Emojipack'
-  },
-  gif128:{
+  gif128: {
     type: String,
   },
-  gif256:{
+  gif256: {
     type: String,
   },
-  gif512:{
+  gif512: {
     type: String,
   },
-  png128:{
+  png128: {
     type: String,
   },
-  png256:{
+  png256: {
     type: String,
   },
-  png512:{
+  png512: {
     type: String,
   },
-  tmpGif128:{
+  tmpGif128: {
     type: String,
   },
-  tmpGif256:{
+  tmpGif256: {
     type: String,
   },
-  tmpGif512:{
+  tmpGif512: {
     type: String,
   },
-  tmpPng128:{
+  tmpPng128: {
     type: String,
   },
-  tmpPng256:{
+  tmpPng256: {
     type: String,
   },
-  tmpPng512:{
+  tmpPng512: {
     type: String,
   },
-  word:{
-    type:String,
+  word: {
+    type: String,
   },
   //이모티콘 번호 / 1번은 해당 이모티콘팩의 메인
-  number:{
-      type:Number,
+  number: {
+    type: Number,
   },
   //해당 이모티콘에 포함된 태그들
-  tags:[
+  tags: [
     {
-        type:ObjectId,
-        ref:'Tag'
+      type: ObjectId,
+      ref: 'Tag'
     }
   ],
-  emojicolors:[
+  emojicolors: [
     {
-        type:ObjectId,
-        ref:'Emojicolor'
+      type: ObjectId,
+      ref: 'EmojiColor'
     }
   ],
-  data_created:{
+  data_created: {
     type: Date,
     default: Date(),
   },
-  data_fix:{
+  data_fix: {
     type: Date,
     default: Date(),
   },
